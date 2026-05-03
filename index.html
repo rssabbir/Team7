@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 7 Mining</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; }
+        .mining-button {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .balance { font-size: 24px; color: #2c3e50; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⛏️ Team 7 Mining Project</h1>
+        <div class="balance">💰 Your Balance: 0 Coins</div>
+        <button class="mining-button" onclick="mine()">⛏️ Start Mining</button>
+        <p id="message"></p>
+        <hr>
+        <h3>📋 Referral Code: TEAM7</h3>
+        <p>Share this code with friends to earn bonuses!</p>
+    </div>
+
+    <script>
+        let balance = 0;
+        function mine() {
+            balance = balance + 1;
+            document.querySelector('.balance').innerHTML = '💰 Your Balance: ' + balance + ' Coins';
+            document.getElementById('message').innerHTML = '✅ Mined 1 coin! Come back in 24 hours.';
+            setTimeout(() => {
+                document.getElementById('message').innerHTML = '';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
